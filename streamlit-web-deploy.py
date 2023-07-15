@@ -54,7 +54,7 @@ else:
 
 stroke_df = pd.read_csv('adjusted_dataset_stroke.csv')
 
-stroke_df_dropped = stroke_df.drop(columns=['id','stroke'])
+stroke_df_dropped = stroke_df.drop(columns=['stroke'])
 
 df = pd.concat([input_df, stroke_df_dropped], axis=0)
 
