@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+import pickle
 import joblib
 
 st.title('Stroke Prediction Website')
