@@ -102,7 +102,7 @@ prediction = load_clf.predict(df)
 prediction_proba = load_clf.predict_proba(df)
 
 st.subheader('Prediction')
-stroke_type = np.array([1, 0])
+stroke_type = np.array([0, 1])
 st.write(stroke_type[prediction])
 
 st.subheader('Prediction Probability')
