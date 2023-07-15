@@ -64,13 +64,6 @@ df = pd.concat([input_df, stroke_df_dropped], axis=0)
 # Displays the user input features
 st.subheader('User Input Features')
 
-if uploaded_file is not None:
-    st.write(df)
-else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
-    st.write(df)
-
-
 # perform one-hot-encoding on 'gender' and 'home' columns
 
 encode = ['gender','work_type','smoking_status','Residence_type']
@@ -85,6 +78,12 @@ label_mapping_married = {'No': False, 'Yes': True}
 df['ever_married'] = df['ever_married'].map(label_mapping_married)
 
 df = df.iloc[:1]
+
+if uploaded_file is not None:
+    st.write(df)
+else:
+    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    st.write(df)
 
 # transform data
 norm = MinMaxScaler().fit(df)
