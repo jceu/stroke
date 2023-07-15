@@ -46,7 +46,18 @@ else:
                }
         features = pd.DataFrame(data, index=[0])
         return features
-    df = user_input_features()
+    input_df = user_input_features()
+
+    
+    
+
+#combine user input features with entire dataset
+
+stroke_df = pd.read_csv('healthcare-dataset-stroke-data.csv')
+
+stroke_df_dropped = stroke_df.drop(columns=['id','stroke'])
+
+df = pd.concat([input_df, stroke_df_dropped], axis=0)
 
 # perform one-hot-encoding on 'gender' and 'home' columns
 
@@ -66,9 +77,6 @@ norm = MinMaxScaler().fit(df)
 df = norm.transform(df)
  
     
-    
-    
-# select only the first row (the user input data)
 
 # Displays the user input features
 st.subheader('User Input Features')
@@ -79,11 +87,10 @@ else:
     st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
     st.write(df)
 
-X = pd.read_csv('features.csv')
-y = pd.read_csv('target.csv')
+# Reads in saved classification model
 
-load_clf = HistGradientBoostingClassifier(learning_rate= 0.2, max_depth= 8, max_iter= 90, max_leaf_nodes= 22, min_samples_leaf= 150)
-load_clf.fit(X,y)
+load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
+
 
 
 # Apply model to make predictions
