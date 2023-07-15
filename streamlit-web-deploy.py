@@ -49,7 +49,7 @@ else:
         return features
     input_df = user_input_features()
 
-    
+
     
 
 #combine user input features with entire dataset
@@ -59,6 +59,17 @@ stroke_df = pd.read_csv('healthcare-dataset-stroke-data.csv')
 stroke_df_dropped = stroke_df.drop(columns=['id','stroke'])
 
 df = pd.concat([input_df, stroke_df_dropped], axis=0)
+
+
+# Displays the user input features
+st.subheader('User Input Features')
+
+if uploaded_file is not None:
+    st.write(df)
+else:
+    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    st.write(df)
+
 
 # perform one-hot-encoding on 'gender' and 'home' columns
 
@@ -79,16 +90,6 @@ df = df.iloc[:1]
 norm = MinMaxScaler().fit(df)
 df = norm.transform(df)
 
-
-
-# Displays the user input features
-st.subheader('User Input Features')
-
-if uploaded_file is not None:
-    st.write(df)
-else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
-    st.write(df)
 
 # Reads in saved classification model
 
