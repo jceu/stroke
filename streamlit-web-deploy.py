@@ -49,7 +49,7 @@ else:
 
 #combine user input features with entire dataset
 
-df = stroke_df.drop(columns=['stroke'])
+df = df.drop(columns=['stroke'])
 
 
 # perform one-hot-encoding on 'gender' and 'home' columns
