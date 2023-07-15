@@ -7,6 +7,8 @@ from sklearn.model_selection import GridSearchCV
 import pickle
 import joblib
 
+pip install scikit-learn
+
 st.title('Stroke Prediction Website')
 
 st.sidebar.header('User Input Features')
