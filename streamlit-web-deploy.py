@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.model_selection import GridSearchCV
 import pickle
 
 st.title('Stroke Prediction Website')
