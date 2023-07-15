@@ -85,9 +85,11 @@ else:
     st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
     st.write(df)
 
-# transform data
-norm = MinMaxScaler().fit(df)
-df = norm.transform(df)
+#transform data
+with open('minmax_scaler.pkl', 'rb') as f:
+    scaler = pickle.load(f)
+scaled_df = scaler.transform(df)
+
 
 
 # Reads in saved classification model
@@ -98,8 +100,8 @@ load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
 
 # Apply model to make predictions
 
-prediction = load_clf.predict(df)
-prediction_proba = load_clf.predict_proba(df)
+prediction = load_clf.predict(scaled_df)
+prediction_proba = load_clf.predict_proba(scaled_df)
 
 st.subheader('Prediction')
 stroke_type = np.array([0, 1])
