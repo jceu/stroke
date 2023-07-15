@@ -86,7 +86,7 @@ else:
     st.write(df)
 
 #transform data
-with open('minmax_scaler.pkl', 'rb') as f:
+with open('scalerNorm.pkl', 'rb') as f:
     scaler = pickle.load(f)
 scaled_df = scaler.transform(df)
 
