@@ -82,7 +82,7 @@ else:
 X = pd.read_csv('features.csv')
 y = pd.read_csv('target.csv')
 
-load_clf = HistGradientBoostingClassifier('class_weight'= {0: 1.0, 1: 1.0}, 'learning_rate'= 0.2, 'max_depth'= 8, 'max_iter'= 90, 'max_leaf_nodes'= 22, 'min_samples_leaf'= 150)
+load_clf = HistGradientBoostingClassifier(class_weight= {0: 1.0, 1: 1.0}, learning_rate= 0.2, max_depth= 8, max_iter= 90, max_leaf_nodes= 22, min_samples_leaf= 150)
 load_clf.fit(X,y)
 
 
