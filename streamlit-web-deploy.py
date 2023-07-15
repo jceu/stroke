@@ -80,7 +80,7 @@ else:
 
 # Reads in saved classification model
 
-load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
+load_clf = pickle.load(open('hgbc_model_lda.pkl', 'rb'))
 
 # Apply model to make predictions
 
