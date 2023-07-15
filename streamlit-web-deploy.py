@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import pickle
-import joblib
 
 st.title('Stroke Prediction Website')
 
@@ -79,7 +78,7 @@ else:
 
 # Reads in saved classification model
 
-load_clf = joblib.load('hgbc_model_lda.pkl')
+load_clf = pickle.load(open('hgbc_model_lda.pkl', 'rb'))
 
 # Apply model to make predictions
 
