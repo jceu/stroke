@@ -44,14 +44,6 @@ else:
         return features
     df = user_input_features()
 
-    
-    
-
-#combine user input features with entire dataset
-
-df = df.drop(columns=['stroke'])
-
-
 # perform one-hot-encoding on 'gender' and 'home' columns
 
 encode = ['gender','work_type','smoking_status','Residence_type']
