@@ -5,6 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.model_selection import GridSearchCV
 import pickle
+import joblib
 
 st.title('Stroke Prediction Website')
 
@@ -80,7 +81,8 @@ else:
 
 # Reads in saved classification model
 
-load_clf = pickle.load(open('hgbc_model_lda.pkl', 'rb'))
+#load_clf = pickle.load(open('hgbc_model_lda.pkl', 'rb'))
+load_clf = joblib.load('hgbc_model_lda.pkl.pkl')
 
 # Apply model to make predictions
 
