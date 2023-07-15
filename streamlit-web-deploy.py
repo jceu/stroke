@@ -52,7 +52,7 @@ else:
 
 #combine user input features with entire dataset
 
-stroke_df = pd.read_csv('healthcare-dataset-stroke-data.csv')
+stroke_df = pd.read_csv('adjusted_dataset_stroke.csv')
 
 stroke_df_dropped = stroke_df.drop(columns=['id','stroke'])
 
