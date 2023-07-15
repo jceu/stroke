@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
+from sklearn.preprocessing import MinMaxScaler
+import joblib
 
 st.title('Stroke Prediction Website')
 
@@ -77,7 +78,7 @@ else:
 
 # Reads in saved classification model
 
-load_clf = pickle.load(open('hgbc_model_lda.pkl', 'rb'))
+load_clf = joblib.load('hgbc_model_lda.pkl')
 
 # Apply model to make predictions
 
