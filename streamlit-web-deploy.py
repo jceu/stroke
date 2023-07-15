@@ -73,11 +73,13 @@ for col in encode:
 label_mapping_married = {'No': False, 'Yes': True}
 df['ever_married'] = df['ever_married'].map(label_mapping_married)
 
+df = df.iloc[:1]
+
 # transform data
 norm = MinMaxScaler().fit(df)
 df = norm.transform(df)
- 
-    
+
+
 
 # Displays the user input features
 st.subheader('User Input Features')
