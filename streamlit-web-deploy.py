@@ -42,18 +42,15 @@ else:
                }
         features = pd.DataFrame(data, index=[0])
         return features
-    input_df = user_input_features()
+    df = user_input_features()
 
     
     
 
 #combine user input features with entire dataset
 
-stroke_df = pd.read_csv('healthcare-dataset-stroke-data.csv')
+df = stroke_df.drop(columns=['stroke'])
 
-stroke_df_dropped = stroke_df.drop(columns=['stroke'])
-
-df = pd.concat([input_df, creatures], axis=0)
 
 # perform one-hot-encoding on 'gender' and 'home' columns
 
@@ -76,8 +73,6 @@ df = norm.transform(df)
     
     
 # select only the first row (the user input data)
-
-df = df.iloc[:1]
 
 # Displays the user input features
 st.subheader('User Input Features')
