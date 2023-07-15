@@ -79,10 +79,12 @@ else:
     st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
     st.write(df)
 
-# Reads in saved classification model
+X = pd.read_csv('features.csv')
+y = pd.read_csv('target.csv')
 
-#load_clf = pickle.load(open('hgbc_model_lda.pkl', 'rb'))
-load_clf = joblib.load('hgbc_model_lda.pkl')
+load_clf = HistGradientBoostingClassifier('class_weight': {0: 1.0, 1: 1.0}, 'learning_rate': 0.2, 'max_depth': 8, 'max_iter': 90, 'max_leaf_nodes': 22, 'min_samples_leaf': 150)
+load_clf.fit(X,y)
+
 
 # Apply model to make predictions
 
