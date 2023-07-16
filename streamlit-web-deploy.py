@@ -153,6 +153,7 @@ with st.container():
         st.write("(Open web page in wide mode to view pie chart better and have a better overall experience)")
         
     with right_column:
+        st.write("#")
         st.header('Prediction: ')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
