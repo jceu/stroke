@@ -11,6 +11,17 @@ st.title('Stroke Prediction Website')
 
 st.sidebar.header('User Input Features')
 
+#change background color
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: lightgray;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.sidebar.markdown("""
 [Example CSV input file](https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv)
@@ -106,7 +117,7 @@ else:
 st.write(prediction_stroke)
 
 st.subheader('Prediction Probability')
-
+#creates a piechart showing probability
 labels = ['Low risk of stroke', 'High risk of stroke']
 sizes = [prediction_proba[0,0],prediction_proba[0,1]]
 colors = ['red', 'yellow']
@@ -115,4 +126,3 @@ ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
 ax.axis('equal')
 fig.set_facecolor('lightgray')
 st.pyplot(fig)
-#st.write(prediction_proba[0,0])
