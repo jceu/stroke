@@ -152,9 +152,7 @@ with st.container():
         st.pyplot(fig)
         
     with right_column:
-        st.write('#')
-        st.write('#')
-        st.write('##')
+        st.write('####')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
             prediction_stroke = "You have a high risk of getting a future stroke"
@@ -163,6 +161,8 @@ with st.container():
         st.header('Prediction: ')
         st.subheader(prediction_stroke)
         st.write("(Open web page in wide mode to view pie chart better)")
+        st.write('#')
+        st.write('#')
         st.write("You are at risk of a future stroke try to eat healthy and exercise more!")
         st_lottie(animation_assets2, height = 600)
 
