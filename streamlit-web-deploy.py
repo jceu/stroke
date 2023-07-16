@@ -101,6 +101,7 @@ with st.container():
     with right_column:
         st_lottie(animation_assets, height = 600)
     with left_column:
+        st.write("##")
         st.subheader("Data Dictionary")
         data_dictionary = {
         "gender": "Gender of user Male or Female",
