@@ -114,7 +114,7 @@ with st.container():
         #creates a piechart showing probability
         labels = ['Low risk of stroke', 'High risk of stroke']
         sizes = [prediction_proba[0,0],prediction_proba[0,1]]
-        colors = ['red', 'blue']
+        colors = ["#8B0000", "#008000"]
         fig, ax = plt.subplots()
         ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
         ax.axis('equal')
