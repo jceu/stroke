@@ -9,17 +9,6 @@ import pickle
 import requests
 from streamlit_lottie import st_lottie
 
-import os
-
-# Specify the path to the file or directory
-path = '.streamlit'
-
-# Specify the desired permissions (e.g., 755)
-permissions = 0o755
-
-# Change the permissions of the file or directory
-os.chmod(path, permissions)
-
 # checks if url is accessible
 def load_lottieurl():
     r = requests.get(url)
