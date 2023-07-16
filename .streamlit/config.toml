@@ -4,3 +4,6 @@ backgroundColor="#222629"
 secondaryBackgroundColor="#61892f"
 textColor="#feffff"
 font="monospace"
+
+[server]
+wideMode = true
