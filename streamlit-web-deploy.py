@@ -16,7 +16,7 @@ def load_lottieurl():
         return None 
     return r.json()
 # load animations assets
-animation_assets = "https://lottie.host/65fd4bb6-5b25-4a2c-8eb7-d4138bb8d05e/OFymjj6W8Q.lottie"
+animation_assets = "https://lottie.host/bba4dee9-1aca-4f0f-877c-bd6dabe45d9a/2eECIRnNXa.json"
 
 st.title('Stroke Prediction Website')
 
