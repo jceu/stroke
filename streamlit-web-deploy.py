@@ -47,7 +47,11 @@ else:
         return features
     input_df = user_input_features()
 
-
+if uploaded_file is not None:
+    st.write(input_df)
+else:
+    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    st.table(input_df)
     
 
 #combine user input features with entire dataset
@@ -74,12 +78,6 @@ for col in encode:
 # Replace the categories with the boolean values    
 label_mapping_married = {'No': False, 'Yes': True}
 df['ever_married'] = df['ever_married'].map(label_mapping_married)
-
-if uploaded_file is not None:
-    st.write(df)
-else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
-    st.table(df)
 
 df = df.iloc[:1]
 
