@@ -22,13 +22,13 @@ if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file)
 else:
     def user_input_features():
-        gender = st.sidebar.selectbox('Gender', ('Male', 'Female'))
+        gender = st.sidebar.radio('Gender', ('Male', 'Female'))
         age = st.sidebar.slider('Age', 0, 20, 100)
         hypertension = st.sidebar.radio('Has Hypertension', (1, 0))
-        heart_disease = st.sidebar.selectbox('Has Heart Disease', (1, 0))
-        ever_married = st.sidebar.selectbox('Ever Married', ('Yes', 'No'))
+        heart_disease = st.sidebar.radio('Has Heart Disease', (1, 0))
+        ever_married = st.sidebar.radio('Ever Married', ('Yes', 'No'))
         work_type = st.sidebar.selectbox('Type of Work', ('Private', 'Self-employed','Govt_job','children','Never_worked'))
-        residence_type = st.sidebar.selectbox('Type of Residence', ('Urban','Rural'))
+        residence_type = st.sidebar.radio('Type of Residence', ('Urban','Rural'))
         avg_glucose_level = st.sidebar.slider('Average Glucose Level', 50, 20, 100)
         bmi = st.sidebar.slider('BMI Level', 10, 20, 55)
         smoking_status = st.sidebar.selectbox('Smoking Status', ('formerly smoked', 'never smoked','smokes','Unknown'))
