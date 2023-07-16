@@ -88,29 +88,31 @@ scaled_df = scaler.transform(df)
 # Reads in saved classification model
 
 load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
-
-
-
 # Apply model to make predictions
-
 prediction = load_clf.predict(scaled_df)
 prediction_proba = load_clf.predict_proba(scaled_df)
 
-st.header('Prediction')
-stroke_type = np.array([0, 1])
-if stroke_type[prediction] == 1:
-    prediction_stroke = "You have a high risk of getting a future stroke"
-else:
-    prediction_stroke = "You have a low risk of getting a future stroke"
-st.write(prediction_stroke)
+with st.container():
+    st.write('---')
+    left_column, right_column =st.columns(2)
+    with left_column:
+        st.header('Prediction')
+        stroke_type = np.array([0, 1])
+        if stroke_type[prediction] == 1:
+            prediction_stroke = "You have a high risk of getting a future stroke"
+        else:
+            prediction_stroke = "You have a low risk of getting a future stroke"
+        st.write(prediction_stroke)
+        
+        st.subheader('Prediction Probability')
+        #creates a piechart showing probability
+        labels = ['Low risk of stroke', 'High risk of stroke']
+        sizes = [prediction_proba[0,0],prediction_proba[0,1]]
+        colors = ['red', 'yellow']
+        fig, ax = plt.subplots()
+        ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+        ax.axis('equal')
+        fig.set_facecolor('gray')
+        st.pyplot(fig)
 
-st.subheader('Prediction Probability')
-#creates a piechart showing probability
-labels = ['Low risk of stroke', 'High risk of stroke']
-sizes = [prediction_proba[0,0],prediction_proba[0,1]]
-colors = ['red', 'yellow']
-fig, ax = plt.subplots()
-ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
-ax.axis('equal')
-fig.set_facecolor('gray')
-st.pyplot(fig)
+
