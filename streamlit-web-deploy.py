@@ -102,6 +102,20 @@ with st.container():
         st_lottie(animation_assets, height = 600)
     with left_column:
         st.subheader("Data Dictionary")
+        data_dictionary = {
+        "gender": "Gender of user Male or Female",
+        "age": "Age of user",
+        "hypertension": "Whether user has hypertension 1 = True/Yes | 0 = False/No",
+        "heart_disease": "Whether user has heart disease 1 = True/Yes | 0 = False/No"",
+        "ever_married": "Whether user has been married before 1 = True/Yes | 0 = False/No"",
+        "work_type": "The type of work",
+        "Residence_type": "The type of residence",
+        "avg_glucose_level": "average glucose level of user",
+        "bmi": "Body mass index (bmi) of user",
+        "smoking_status": "The smoking status of user"
+        }
+        st.table(data_dictionary)
+
 
 # Reads in saved classification model
 load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
