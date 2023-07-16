@@ -5,5 +5,3 @@ secondaryBackgroundColor="#61892f"
 textColor="#feffff"
 font="monospace"
 
-[server]
-wideMode = true
