@@ -98,7 +98,11 @@ prediction_proba = load_clf.predict_proba(scaled_df)
 
 st.subheader('Prediction')
 stroke_type = np.array([0, 1])
-st.write(stroke_type[prediction])
+if stroke_type[prediction] == 1:
+    prediction_stroke = "There is a risk of stroke"
+else:
+    prediction_stroke = "There is no risk of stroke"
+st.write(prediction_stroke)
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
