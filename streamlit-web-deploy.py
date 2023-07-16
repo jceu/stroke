@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import HistGradientBoostingClassifier
 import pickle
@@ -104,11 +105,12 @@ else:
     prediction_stroke = "There is no risk of stroke"
 st.subheader(prediction_stroke)
 
+st.subheader('Prediction Probability')
 labels = ['0', '1']
-sizes = prediction_proba
+sizes = [prediction_proba[0],prediction_proba[1]]
 colors = ['red', 'yellow']
 fig, ax = plt.subplots()
 ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
-
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+ax.axis('equal')
+st.pyplot(fig)
+#st.write(prediction_proba)
