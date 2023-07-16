@@ -147,13 +147,13 @@ with st.container():
         ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90, textprops={"color": "white"})
         ax.axis('equal')
         fig.set_facecolor('#0B0C10')
-        fig.set_size_inches(6, 3)
+        fig.set_size_inches(9, 8)
         st.pyplot(fig)
         
     with right_column:
         st.write('#')
         st.write('#')
-        st.write('#')
+        st.write('##')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
             prediction_stroke = "You have a high risk of getting a future stroke"
