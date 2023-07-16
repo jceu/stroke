@@ -112,9 +112,9 @@ with st.container():
         data_dictionary = {
         "gender": "Gender of user Male or Female",
         "age": "Age of user",
-        "hypertension": "Whether user has hypertension 1 = True/Yes | 0 = False/No",
-        "heart_disease": "Whether user has heart disease 1 = True/Yes | 0 = False/No",
-        "ever_married": "Whether user has been married before 1 = True/Yes | 0 = False/No",
+        "hypertension": "Whether user has hypertension",
+        "heart_disease": "Whether user has heart disease",
+        "ever_married": "Whether user has been married before",
         "work_type": "The type of work",
         "Residence_type": "The type of residence",
         "avg_glucose_level": "average glucose level of user",
