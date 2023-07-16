@@ -102,7 +102,7 @@ if stroke_type[prediction] == 1:
     prediction_stroke = "There is a risk of stroke"
 else:
     prediction_stroke = "There is no risk of stroke"
-st.write(prediction_stroke)
+st.subheader(prediction_stroke)
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
