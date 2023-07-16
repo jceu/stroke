@@ -60,6 +60,7 @@ else:
 
 # shows user inputs
 st.subheader('User Input Features')
+st.write('##')
 if uploaded_file is not None:
     st.table(input_df)
 else:
