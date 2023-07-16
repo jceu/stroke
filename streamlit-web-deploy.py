@@ -24,7 +24,7 @@ else:
     def user_input_features():
         gender = st.sidebar.selectbox('Gender', ('Male', 'Female'))
         age = st.sidebar.slider('Age', 0, 20, 100)
-        hypertension = st.sidebar.selectbox('Has Hypertension', (1, 0))
+        hypertension = st.sidebar.radio('Has Hypertension', (1, 0))
         heart_disease = st.sidebar.selectbox('Has Heart Disease', (1, 0))
         ever_married = st.sidebar.selectbox('Ever Married', ('Yes', 'No'))
         work_type = st.sidebar.selectbox('Type of Work', ('Private', 'Self-employed','Govt_job','children','Never_worked'))
@@ -96,7 +96,7 @@ load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
 prediction = load_clf.predict(scaled_df)
 prediction_proba = load_clf.predict_proba(scaled_df)
 
-st.subheader('Prediction')
+st.header('Prediction')
 stroke_type = np.array([0, 1])
 if stroke_type[prediction] == 1:
     prediction_stroke = "There is a risk of stroke"
