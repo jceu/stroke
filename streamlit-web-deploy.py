@@ -133,7 +133,7 @@ prediction_proba = load_clf.predict_proba(scaled_df)
 
 # relavent information of prediction displayed
 with st.container():
-    st.write('-----')
+    st.write('---')
     left_column, right_column = st.columns(2,gap="large")
     
     with left_column:
