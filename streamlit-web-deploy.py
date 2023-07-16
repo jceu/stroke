@@ -75,13 +75,13 @@ for col in encode:
 label_mapping_married = {'No': False, 'Yes': True}
 df['ever_married'] = df['ever_married'].map(label_mapping_married)
 
-df = df.iloc[:1]
-
 if uploaded_file is not None:
     st.write(df)
 else:
     st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
-    st.write(df)
+    st.table(df)
+
+df = df.iloc[:1]
 
 #transform data
 with open('scalerNorm.pkl', 'rb') as f:
