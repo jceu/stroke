@@ -97,7 +97,7 @@ load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
 prediction = load_clf.predict(scaled_df)
 prediction_proba = load_clf.predict_proba(scaled_df)
 
-st.header('Prediction')
+st.title('Prediction')
 stroke_type = np.array([0, 1])
 if stroke_type[prediction] == 1:
     prediction_stroke = "High risk of stroke"
