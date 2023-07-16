@@ -6,6 +6,17 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import HistGradientBoostingClassifier
 import pickle
 
+import requests
+import streamlit_lottie import st_lottie
+
+# checks if url is accessible
+def load_lottieurl():
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None 
+    return r.json()
+# load animations assets
+animation_assets = "https://lottie.host/9918e8b0-ede8-4566-b114-d2d2c0210649/OVYpu4whI1.json"
 
 st.title('Stroke Prediction Website')
 
@@ -114,5 +125,7 @@ with st.container():
         ax.axis('equal')
         fig.set_facecolor('gray')
         st.pyplot(fig)
+    with right_column:
+        st_lottie(animation_assets, height = 300)
 
 
