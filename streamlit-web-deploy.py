@@ -134,6 +134,6 @@ with st.container():
         st.write('-----')
         left_column, right_column =st.columns(2)
         with left_column:
-            st_lottie(animation_assets, height = 300)
+            st_lottie(animation_assets, height = 600)
 
 
