@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import HistGradientBoostingClassifier
-import pickle
+import pickl
 
 import requests
 from streamlit_lottie import st_lottie
