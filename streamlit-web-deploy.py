@@ -122,13 +122,12 @@ with st.container():
         st.pyplot(fig)
         
     with right_column:
-        st.header('Prediction')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
             prediction_stroke = "You have a high risk of getting a future stroke"
         else:
             prediction_stroke = "You have a low risk of getting a future stroke"
-        st.write(prediction_stroke)
+        st.header('Prediction: ',prediction_stroke)
         
     with st.container():
         st.write('-----') 
