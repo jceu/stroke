@@ -48,6 +48,7 @@ else:
     input_df = user_input_features()
 
 # shows user inputs
+st.subheader('User Input Features')
 if uploaded_file is not None:
     st.table(input_df)
 else:
@@ -61,10 +62,6 @@ stroke_df = pd.read_csv('adjusted_dataset_stroke.csv')
 stroke_df_dropped = stroke_df.drop(columns=['stroke'])
 
 df = pd.concat([input_df, stroke_df_dropped], axis=0)
-
-
-# Displays the user input features
-st.subheader('User Input Features')
 
 # perform one-hot-encoding on 'gender' and 'home' columns
 
