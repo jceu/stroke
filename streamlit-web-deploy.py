@@ -107,5 +107,11 @@ st.subheader(prediction_stroke)
 
 st.subheader('Prediction Probability')
 
-
-st.write(prediction_proba[0,0])
+labels = ['0', '1']
+sizes = [prediction_proba[0,0],prediction_proba[0,1]]
+colors = ['red', 'yellow']
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')
+st.pyplot(fig)
+#st.write(prediction_proba[0,0])
