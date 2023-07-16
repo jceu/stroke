@@ -23,7 +23,7 @@ st.write('###')
 st.sidebar.header('User Input Features')
 
 st.sidebar.markdown("""
-[Example CSV input file](https://github.com/jceu/stroke/blob/4e98daf419d31f12eda131345ef7017b50b1729b/example_data.csv)
+[Example CSV input file](https://raw.githubusercontent.com/jceu/stroke/main/example_data.csv)
 """)
 
 #collect user input features into a dataframe
