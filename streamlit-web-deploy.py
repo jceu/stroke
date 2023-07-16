@@ -122,7 +122,8 @@ with st.container():
         st.pyplot(fig)
         
     with right_column:
-        st.write('#######')
+        st.write('##')
+        st.write('##')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
             prediction_stroke = "You have a high risk of getting a future stroke"
