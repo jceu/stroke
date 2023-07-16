@@ -103,7 +103,7 @@ if stroke_type[prediction] == 1:
     prediction_stroke = "You have a high risk of getting a future stroke"
 else:
     prediction_stroke = "You have a low risk of getting a future stroke"
-st.write(prediction_stroke)
+st.markdown("<h1 style='font-size: 24px;'>Hello, World!</h1>", unsafe_allow_html=True)
 
 st.subheader('Prediction Probability')
 
