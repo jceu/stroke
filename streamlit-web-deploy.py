@@ -97,12 +97,13 @@ scaled_df = scaler.transform(df)
 
 
 # Reads in saved classification model
-
 load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
+
 # Apply model to make predictions
 prediction = load_clf.predict(scaled_df)
 prediction_proba = load_clf.predict_proba(scaled_df)
 
+# relavent information of prediction displayed
 with st.container():
     st.write('-----')
     left_column, right_column =st.columns(2)
@@ -113,6 +114,8 @@ with st.container():
             prediction_stroke = "You have a high risk of getting a future stroke"
         else:
             prediction_stroke = "You have a low risk of getting a future stroke"
+        
+    with right_column:
         st.write(prediction_stroke)
         st.write('##')
         st.subheader('Prediction Probability')
@@ -125,7 +128,11 @@ with st.container():
         ax.axis('equal')
         fig.set_facecolor('gray')
         st.pyplot(fig)
-    with right_column:
-        st_lottie(animation_assets, height = 300)
+        
+    with st.container():
+        st.write('-----')
+        left_column, right_column =st.columns(2)
+        with left_column:
+            st_lottie(animation_assets, height = 300)
 
 
