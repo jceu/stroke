@@ -118,7 +118,7 @@ with st.container():
         fig, ax = plt.subplots()
         ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90, textprops={"color": "white"})
         ax.axis('equal')
-        fig.set_facecolor('#FFFFFF')
+        fig.set_facecolor('#0000ff')
         st.pyplot(fig)
         
     with right_column:
