@@ -104,5 +104,11 @@ else:
     prediction_stroke = "There is no risk of stroke"
 st.subheader(prediction_stroke)
 
+labels = ['0', '1']
+sizes = prediction_proba
+colors = ['red', 'yellow']
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
