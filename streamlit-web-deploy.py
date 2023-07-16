@@ -7,7 +7,7 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 import pickle
 
 import requests
-import streamlit_lottie as st_lottie
+from streamlit_lottie import st_lottie
 
 # checks if url is accessible
 def load_lottieurl():
