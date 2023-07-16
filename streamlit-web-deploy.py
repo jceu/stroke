@@ -147,7 +147,7 @@ with st.container():
         ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90, textprops={"color": "white"})
         ax.axis('equal')
         fig.set_facecolor('#0B0C10')
-        fig.set_size_inches(9, 8)
+        #fig.set_size_inches(9, 8)
         st.pyplot(fig)
         
     with right_column:
