@@ -114,7 +114,7 @@ with st.container():
         #creates a piechart showing probability
         labels = ['Low risk of stroke', 'High risk of stroke']
         sizes = [prediction_proba[0,0],prediction_proba[0,1]]
-        colors = ['red', 'yellow']
+        colors = ['red', 'blue']
         fig, ax = plt.subplots()
         ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
         ax.axis('equal')
@@ -131,7 +131,7 @@ with st.container():
         st.write(prediction_stroke)
         
     with st.container():
-        st.write('-----')
+        st.write('-----') 
         left_column, right_column =st.columns(2)
         with left_column:
             st_lottie(animation_assets, height = 600)
