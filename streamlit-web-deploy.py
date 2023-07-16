@@ -17,6 +17,7 @@ def load_lottieurl():
     return r.json()
 # load animations assets
 animation_assets = "https://lottie.host/bba4dee9-1aca-4f0f-877c-bd6dabe45d9a/2eECIRnNXa.json"
+animation_assets2 = "https://lottie.host/c6d26031-6c6e-4fcd-af9c-9ca061b99002/TM8rXPAdPB.json"
 
 st.title('Welcome To My Stroke Prediction Website  :wave:')
 st.write('###')
@@ -162,3 +163,6 @@ with st.container():
         st.header('Prediction: ')
         st.subheader(prediction_stroke)
         st.write("(Open web page in wide mode to view pie chart better)")
+        st.write("You are at risk of a future stroke try to eat healthy and exercise more!")
+        st_lottie(animation_assets2, height = 600)
+
