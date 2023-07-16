@@ -107,16 +107,8 @@ prediction_proba = load_clf.predict_proba(scaled_df)
 with st.container():
     st.write('-----')
     left_column, right_column =st.columns(2)
+    
     with left_column:
-        st.header('Prediction')
-        stroke_type = np.array([0, 1])
-        if stroke_type[prediction] == 1:
-            prediction_stroke = "You have a high risk of getting a future stroke"
-        else:
-            prediction_stroke = "You have a low risk of getting a future stroke"
-        
-    with right_column:
-        st.write(prediction_stroke)
         st.write('##')
         st.subheader('Prediction Probability')
         #creates a piechart showing probability
@@ -128,6 +120,15 @@ with st.container():
         ax.axis('equal')
         fig.set_facecolor('gray')
         st.pyplot(fig)
+        
+    with right_column:
+        st.header('Prediction')
+        stroke_type = np.array([0, 1])
+        if stroke_type[prediction] == 1:
+            prediction_stroke = "You have a high risk of getting a future stroke"
+        else:
+            prediction_stroke = "You have a low risk of getting a future stroke"
+        st.write(prediction_stroke)
         
     with st.container():
         st.write('-----')
