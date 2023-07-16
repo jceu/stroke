@@ -8,7 +8,6 @@ import pickle
 
 import requests
 from streamlit_lottie import st_lottie
-st.write('Hello')
 # checks if url is accessible
 def load_lottieurl():
     r = requests.get(url)
