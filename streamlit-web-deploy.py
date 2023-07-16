@@ -21,6 +21,63 @@ animation_assets2 = "https://lottie.host/c6d26031-6c6e-4fcd-af9c-9ca061b99002/TM
 animation_assets3 = "https://lottie.host/9918e8b0-ede8-4566-b114-d2d2c0210649/OVYpu4whI1.json"
 
 st.title('Welcome To My Stroke Prediction Website  :wave:')
+
+"""
+# Try out Theming!
+
+Click on the images below to view this app with different themes. 
+"""
+
+""
+
+THEMES = [
+    "light",
+    "dark",
+    "green",
+    "blue",
+]
+GITHUB_OWNER = "streamlit"
+
+# Show thumbnails for available themes.
+# As html img tags here, so we can add links on them.
+cols = st.beta_columns(len(THEMES))
+for col, theme in zip(cols, THEMES):
+
+    # Get repo name for this theme (to link to correct deployed app)-
+    if theme == "light":
+        repo = "theming-showcase"
+    else:
+        repo = f"theming-showcase-{theme}"
+
+    # Set border of current theme to red, otherwise black or white
+    if theme == CURRENT_THEME:
+        border_color = "red"
+    else:
+        border_color = "lightgrey" if IS_DARK_THEME else "black"
+
+    col.markdown(
+        # f'<p align=center><a href="https://share.streamlit.io/{GITHUB_OWNER}/{repo}/main"><img style="border: 1px solid {border_color}" alt="{theme}" src="https://raw.githubusercontent.com/{GITHUB_OWNER}/theming-showcase/main/thumbnails/{theme}.png" width=150></a></p>',
+        f'<p align=center><a href="https://apps.streamlitusercontent.com/{GITHUB_OWNER}/{repo}/main/streamlit_app.py/+/"><img style="border: 1px solid {border_color}" alt="{theme}" src="https://raw.githubusercontent.com/{GITHUB_OWNER}/theming-showcase/main/thumbnails/{theme}.png" width=150></a></p>',
+        unsafe_allow_html=True,
+    )
+    if theme in ["light", "dark"]:
+        theme_descriptor = theme.capitalize() + " theme"
+    else:
+        theme_descriptor = "Custom theme"
+    col.write(f"<p align=center>{theme_descriptor}</p>", unsafe_allow_html=True)
+
+
+""
+with st.beta_expander("Not loading?"):
+    st.write(
+        "You probably played around with themes before and overrode this app's theme. Go to ☰ -> Settings -> Theme and select *Custom Theme*."
+    )
+with st.beta_expander("How can I use this theme in my app?"):
+    st.write(EXPANDER_TEXT)
+
+""
+""
+
 st.write('###')
 st.sidebar.header('User Input Features')
 
