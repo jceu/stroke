@@ -108,4 +108,4 @@ st.subheader(prediction_stroke)
 st.subheader('Prediction Probability')
 
 
-st.write(prediction_proba[:,0])
+st.write(prediction_proba[0,0])
