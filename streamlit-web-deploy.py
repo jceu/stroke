@@ -12,7 +12,7 @@ from streamlit_lottie import st_lottie
 import os
 
 # Specify the path to the file or directory
-path = '.streamlit/config.toml'
+path = '.streamlit'
 
 # Specify the desired permissions (e.g., 755)
 permissions = 0o755
