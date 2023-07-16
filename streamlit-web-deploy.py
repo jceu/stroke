@@ -138,6 +138,7 @@ with st.container():
     
     with left_column:
         st.subheader('Prediction Probability')
+        st.write("####")
         #creates a piechart showing probability
         labels = ['Low risk of stroke', 'High risk of stroke']
         sizes = [prediction_proba[0,0],prediction_proba[0,1]]
