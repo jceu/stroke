@@ -113,5 +113,6 @@ colors = ['red', 'yellow']
 fig, ax = plt.subplots()
 ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
 ax.axis('equal')
+fig.set_facecolor('lightgray')
 st.pyplot(fig)
 #st.write(prediction_proba[0,0])
