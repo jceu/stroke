@@ -19,7 +19,7 @@ def load_lottieurl():
 animation_assets = "https://lottie.host/bba4dee9-1aca-4f0f-877c-bd6dabe45d9a/2eECIRnNXa.json"
 
 st.title('Welcome To My Stroke Prediction Website  :wave:')
-
+st.write('###')
 st.sidebar.header('User Input Features')
 
 st.sidebar.markdown("""
