@@ -95,7 +95,13 @@ with open('scalerNorm.pkl', 'rb') as f:
     scaler = pickle.load(f)
 scaled_df = scaler.transform(df)
 
-
+with st.container():
+    st.write('-----') 
+    left_column, right_column =st.columns(2)
+    with right_column:
+        st_lottie(animation_assets, height = 600)
+    with left_column:
+        st.subheader("Data Dictionary")
 
 # Reads in saved classification model
 load_clf = pickle.load(open('hgbc_model_lda_pickle.pkl', 'rb'))
@@ -133,11 +139,3 @@ with st.container():
             prediction_stroke = "You have a low risk of getting a future stroke"
         st.header('Prediction: ')
         st.subheader(prediction_stroke)
-        
-    with st.container():
-        st.write('-----') 
-        left_column, right_column =st.columns(2)
-        with left_column:
-            st_lottie(animation_assets, height = 600)
-
-
