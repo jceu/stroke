@@ -96,7 +96,7 @@ with st.container():
     st.write('-----')
     left_column, right_column =st.columns(2)
     with left_column:
-        st.write('##')
+        st.write('#')
         st.header('Prediction')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
