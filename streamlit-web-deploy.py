@@ -161,4 +161,4 @@ with st.container():
             prediction_stroke = "You have a low risk of getting a future stroke"
         st.header('Prediction: ')
         st.subheader(prediction_stroke)
-        st.write("Open wide mode to view pie chart better")
+        st.write("(Open web page in wide mode to view pie chart better)")
