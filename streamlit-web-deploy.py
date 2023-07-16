@@ -96,7 +96,6 @@ with st.container():
     st.write('-----')
     left_column, right_column =st.columns(2)
     with left_column:
-        st.write('#')
         st.header('Prediction')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
@@ -104,7 +103,7 @@ with st.container():
         else:
             prediction_stroke = "You have a low risk of getting a future stroke"
         st.write(prediction_stroke)
-        
+        st.write('##')
         st.subheader('Prediction Probability')
         #creates a piechart showing probability
         labels = ['Low risk of stroke', 'High risk of stroke']
