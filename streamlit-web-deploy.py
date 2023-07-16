@@ -11,18 +11,6 @@ st.title('Stroke Prediction Website')
 
 st.sidebar.header('User Input Features')
 
-#change background color
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: blue;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 st.sidebar.markdown("""
 [Example CSV input file](https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv)
 """)
