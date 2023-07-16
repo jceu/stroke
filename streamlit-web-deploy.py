@@ -47,10 +47,10 @@ else:
         return features
     input_df = user_input_features()
 
+# shows user inputs
 if uploaded_file is not None:
-    st.write(input_df)
+    st.table(input_df)
 else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
     st.table(input_df)
     
 
