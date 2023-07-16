@@ -128,7 +128,8 @@ with st.container():
             prediction_stroke = "You have a high risk of getting a future stroke"
         else:
             prediction_stroke = "You have a low risk of getting a future stroke"
-        st.header('Prediction: ',prediction_stroke)
+        st.header('Prediction: ')
+        st.subheader(prediction_stroke)
         
     with st.container():
         st.write('-----') 
