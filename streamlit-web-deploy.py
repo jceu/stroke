@@ -63,7 +63,7 @@ st.subheader('User Input Features')
 if uploaded_file is not None:
     st.table(input_df)
 else:
-    st.table("Gender",input_df["gender"])
+    st.write("Gender",input_df["gender"])
     
 
 #combine user input features with entire dataset
