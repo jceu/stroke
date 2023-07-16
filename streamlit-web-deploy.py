@@ -152,7 +152,7 @@ with st.container():
         fig.set_facecolor('#0B0C10')
         fig.set_size_inches(3, 3)
         st.pyplot(fig)
-        st.write("(Open web page in wide mode to view pie chart better)")
+        st.write("(Open web page in wide mode to view pie chart better and have a better overall experience)")
         
     with right_column:
         st.header('Prediction: ')
