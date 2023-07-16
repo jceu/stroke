@@ -100,14 +100,14 @@ prediction_proba = load_clf.predict_proba(scaled_df)
 st.header('Prediction')
 stroke_type = np.array([0, 1])
 if stroke_type[prediction] == 1:
-    prediction_stroke = "There is a risk of stroke"
+    prediction_stroke = "High risk of stroke"
 else:
-    prediction_stroke = "There is no risk of stroke"
+    prediction_stroke = "Low risk of stroke"
 st.subheader(prediction_stroke)
 
 st.subheader('Prediction Probability')
 
-labels = ['0', '1']
+labels = ['Low risk of stroke', 'High risk of stroke']
 sizes = [prediction_proba[0,0],prediction_proba[0,1]]
 colors = ['red', 'yellow']
 fig, ax = plt.subplots()
