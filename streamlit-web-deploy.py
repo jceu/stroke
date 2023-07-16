@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import HistGradientBoostingClassifier
 import pickle
+import plotly.figure_factory as ff
 
 import requests
 from streamlit_lottie import st_lottie
