@@ -35,8 +35,8 @@ else:
     def user_input_features():
         gender = st.sidebar.radio('Gender', ('Male', 'Female'))
         age = st.sidebar.slider('Age', 0, 20, 100)
-        hypertension = st.sidebar.radio('Has Hypertension', (1, 0))
-        heart_disease = st.sidebar.radio('Has Heart Disease', (1, 0))
+        hypertension = st.sidebar.radio('Has Hypertension', ("Yes", "No"))
+        heart_disease = st.sidebar.radio('Has Heart Disease', ("Yes", "No"))
         ever_married = st.sidebar.radio('Ever Married', ('Yes', 'No'))
         work_type = st.sidebar.selectbox('Type of Work', ('Private', 'Self-employed','Govt_job','children','Never_worked'))
         residence_type = st.sidebar.radio('Type of Residence', ('Urban','Rural'))
@@ -87,6 +87,12 @@ for col in encode:
 # Replace the categories with the boolean values    
 label_mapping_married = {'No': False, 'Yes': True}
 df['ever_married'] = df['ever_married'].map(label_mapping_married)
+
+label_mapping_hypertension = {'No': 0, 'Yes': 1}
+df['hypertension'] = df['hypertension'].map(label_mapping_hypertension)
+
+label_mapping_heart_disease = {'No': 0, 'Yes': 1}
+df['heart_disease'] = df['heart_disease'].map(label_mapping_heart_disease)
 
 df = df.iloc[:1]
 
