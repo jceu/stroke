@@ -18,6 +18,7 @@ def load_lottieurl():
 # load animations assets
 animation_assets = "https://lottie.host/bba4dee9-1aca-4f0f-877c-bd6dabe45d9a/2eECIRnNXa.json"
 animation_assets2 = "https://lottie.host/c6d26031-6c6e-4fcd-af9c-9ca061b99002/TM8rXPAdPB.json"
+animation_assets3 = "https://lottie.host/9918e8b0-ede8-4566-b114-d2d2c0210649/OVYpu4whI1.json"
 
 st.title('Welcome To My Stroke Prediction Website  :wave:')
 st.write('###')
@@ -150,17 +151,19 @@ with st.container():
         fig.set_facecolor('#0B0C10')
         fig.set_size_inches(3, 3)
         st.pyplot(fig)
+        st.write("(Open web page in wide mode to view pie chart better)")
         
     with right_column:
         st.write('####')
         stroke_type = np.array([0, 1])
         if stroke_type[prediction] == 1:
-            prediction_stroke = "You have a high risk of getting a future stroke, try to eat healthy and exercise more!"
             st_lottie(animation_assets2, height = 600)
+            prediction_stroke = "You have a high risk of getting a future stroke, try to eat healthy and exercise more!"
         else:
+            st_lottie(animation_assets3, height = 600)
             prediction_stroke = "You have a low risk of getting a future stroke, continue to exercise and eat healthy!"
         st.header('Prediction: ')
         st.subheader(prediction_stroke)
-        st.write("(Open web page in wide mode to view pie chart better)")
+        
         
 
