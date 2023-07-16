@@ -106,5 +106,13 @@ else:
 st.subheader(prediction_stroke)
 
 st.subheader('Prediction Probability')
-
+import matplotlib.pyplot as plt
+import streamlit as st
+labels = ['0', '1']
+sizes = [prediction_proba]
+colors = ['red', 'yellow']
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')
+st.pyplot(fig)
 st.write(prediction_proba)
